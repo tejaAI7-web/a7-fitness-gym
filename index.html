@@ -1,15 +1,14 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>A7 Fitness Studio | Unisex Gym Erragadda</title>
   <style>
-    /* Dribbble-Inspired High-Energy Color Palette */
     :root {
       --bg-deep-black: #0d0d0e;
       --bg-card-dark: #161618;
-      --neon-accent: #baff39; /* High-visibility lime neon */
+      --neon-accent: #baff39; 
       --text-pure-white: #ffffff;
       --text-muted-gray: #a1a1aa;
     }
@@ -28,7 +27,6 @@
       overflow-x: hidden;
     }
 
-    /* Header Navigation */
     header {
       background: rgba(13, 13, 14, 0.95);
       padding: 20px;
@@ -64,21 +62,19 @@
       transition: transform 0.2s;
     }
 
-    .nav-cta:hover {
-      transform: scale(1.05);
-    }
-
-    /* Hero Section */
+    /* Hero Section - Fixed with pure CSS gradients to remove external image dependency */
     .hero-banner {
       position: relative;
       padding: 100px 20px;
       text-align: center;
-      background: linear-gradient(rgba(13,13,14,0.6), rgba(13,13,14,0.9)), url('gym-hero.png') no-repeat center center/cover;
-      min-height: 80vh;
+      background: radial-gradient(circle at 80% 20%, rgba(186, 255, 57, 0.08) 0%, transparent 50%), 
+                  radial-gradient(circle at 20% 80%, rgba(22, 22, 24, 1) 0%, var(--bg-deep-black) 100%);
+      min-height: 75vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      border-bottom: 1px solid #27272a;
     }
 
     .hero-tag {
@@ -125,7 +121,6 @@
       box-shadow: 0 10px 20px rgba(186, 255, 57, 0.15);
     }
 
-    /* Features Component Grid */
     .features-grid {
       padding: 80px 20px;
       max-width: 1200px;
@@ -164,7 +159,6 @@
       font-size: 14px;
     }
 
-    /* Interactive Lead Intake Form Block */
     .lead-capture-section {
       padding: 80px 20px;
       background: #111112;
@@ -212,11 +206,6 @@
       font-size: 15px;
     }
 
-    .input-row input:focus {
-      outline: none;
-      border-color: var(--neon-accent);
-    }
-
     .submit-button {
       width: 100%;
       background: var(--neon-accent);
@@ -231,11 +220,11 @@
       margin-top: 10px;
     }
 
-    /* Automated Google Reviews Showcase */
+    /* Testimonials Module - Linked with your uploaded clean image assets */
     .testimonials-section {
       padding: 80px 20px;
       text-align: center;
-      max-width: 800px;
+      max-width: 600px;
       margin: 0 auto;
     }
 
@@ -255,44 +244,33 @@
 
     .review-display-box {
       background: var(--bg-card-dark);
-      padding: 40px 30px;
       border-radius: 16px;
       border: 1px solid #27272a;
-      min-height: 240px;
+      overflow: hidden;
       display: flex;
-      flex-direction: column;
       justify-content: center;
+      align-items: center;
+      min-height: 250px;
     }
 
     .review-node {
       display: none;
+      width: 100%;
+      padding: 20px;
     }
 
     .review-node.visible {
       display: block;
     }
 
-    .gold-stars {
-      color: #ffcc00;
-      font-size: 20px;
-      margin-bottom: 15px;
+    .review-node img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+      margin: 0 auto;
     }
 
-    .quote-content {
-      font-size: 16px;
-      color: var(--text-pure-white);
-      font-style: italic;
-      margin-bottom: 20px;
-    }
-
-    .reviewer-identity {
-      color: var(--neon-accent);
-      font-weight: 700;
-      font-size: 14px;
-      text-transform: uppercase;
-    }
-
-    /* Map & Production Footer Grid */
     footer {
       background: var(--bg-deep-black);
       border-top: 1px solid #27272a;
@@ -333,17 +311,14 @@
       border: 0;
     }
 
-    /* Mobile Adaptability Media Rules */
     @media (max-width: 768px) {
       .hero-banner h2 { font-size: 30px; }
-      .hero-banner p { font-size: 14px; }
       .features-grid { padding: 40px 10px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation Layer -->
   <header>
     <div class="brand-logo">
       <h1>A7 <span>FITNESS</span></h1>
@@ -351,7 +326,6 @@
     <a href="tel:+917680069791" class="nav-cta">Call Gym</a>
   </header>
 
-  <!-- Hero Presentation Frame -->
   <section class="hero-banner">
     <div class="hero-tag">Premium Unisex Training Studio</div>
     <h2>Transform Your Fitness Journey <span>In A Smarter Way</span></h2>
@@ -359,7 +333,6 @@
     <a href="#claim-pass" class="hero-action-btn">Get Free Trial Pass</a>
   </section>
 
-  <!-- Value Feature Layout -->
   <section class="features-grid">
     <div class="feature-item">
       <div class="feature-icon">🏋️‍♂️</div>
@@ -378,7 +351,6 @@
     </div>
   </section>
 
-  <!-- Interactive Input Module -->
   <section class="lead-capture-section" id="claim-pass">
     <div class="form-wrapper">
       <h3>Claim Your 1-Day Trial Pass</h3>
@@ -404,50 +376,29 @@
     </div>
   </section>
 
-  <!-- Verified Google Reviews Module (Rotates every 5 seconds) -->
   <section class="testimonials-section">
     <h3 class="section-title">Verified Member Reviews</h3>
     <div class="rating-summary">★ 4.8 Rating (141 Real Google Reviews)</div>
     
     <div class="review-display-box">
-      <!-- Node 1 -->
       <div class="review-node visible">
-        <div class="gold-stars">★★★★★</div>
-        <p class="quote-content">"This is the best gym to get trained by the best professional trainers and it has the best management. I started at this gym in 2024 and still continue. It is a top professional gym with good equipment. LIFE HAS ITS UPS AND DOWNS. WE CALL THEM SQUATS.🏋️‍♂️"</p>
-        <p class="reviewer-identity">— Immu 1209</p>
+        <img src="review-immu.png" alt="Immu 1209 Google Review">
       </div>
-
-      <!-- Node 2 -->
       <div class="review-node">
-        <div class="gold-stars">★★★★★</div>
-        <p class="quote-content">"One of the best gym in erragadda for workout Excellent Gym, Highly Supportive, Committed & Professional Personal Trainers Very Involved, Positive Management Overall A Very Pleasant gym"</p>
-        <p class="reviewer-identity">— Faisal ahmed</p>
+        <img src="review-faisal.png" alt="Faisal Ahmed Google Review">
       </div>
-
-      <!-- Node 3 -->
       <div class="review-node">
-        <div class="gold-stars">★★★★★</div>
-        <p class="quote-content">"Thank for the time and dedication that you have put into our team and for bringing the best out of us. Your individual attention has helped me improve my game. I wanted to thank you for all that you have done for me And the gym was good the coach's are so friendly ❤️"</p>
-        <p class="reviewer-identity">— Sameer Sam</p>
+        <img src="review-sameer.png" alt="Sameer Sam Google Review">
       </div>
-
-      <!-- Node 4 -->
       <div class="review-node">
-        <div class="gold-stars">★★★★★</div>
-        <p class="quote-content">"Great gym with top-tier coaching. Trainer Bilaal is excellent—his training style is effective and very motivating. Highly recommend both the facility and his expertise!"</p>
-        <p class="reviewer-identity">— Praveen Kumar</p>
+        <img src="review-pveen.png" alt="Praveen Kumar Google Review">
       </div>
-
-      <!-- Node 5 -->
       <div class="review-node">
-        <div class="gold-stars">★★★★★</div>
-        <p class="quote-content">"A7 Fitness Studio is often praised for its clean, spacious, and well-maintained environment. Customers frequently highlight the good ambiance which makes for a pleasant workout experience. They've invested in a wide range of advanced equipment for both strength training and cardio..."</p>
-        <p class="reviewer-identity">— Faqathfoodiehyd</p>
+        <img src="review-faqath.png" alt="Faqathfoodiehyd Google Review">
       </div>
     </div>
   </section>
 
-  <!-- Location Map Layout & Metadata -->
   <footer>
     <div class="footer-layout">
       <div class="meta-details">
@@ -457,26 +408,24 @@
         <p>⏰ Hours: Closes at 12:00 AM Midnight</p>
       </div>
       <div class="map-frame-box">
-        <!-- Live Embedded Matrix pointing directly to Erragadda area -->
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.2125642435663!2d78.41908917596825!3d17.44951640063943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91024fb7030f%3A0x6b876fc1edefbeaa!2sErragadda%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1719830500000" allowfullscreen="" loading="lazy"></iframe>
       </div>
     </div>
   </footer>
 
-  <!-- Automation Automation Engines -->
   <script>
-    // Automated Testimonial Carousel Loop Engine (5000ms Step)
     let reviewIndex = 0;
     const reviewNodes = document.querySelectorAll('.review-node');
 
     function cycleReviews() {
-      reviewNodes[reviewIndex].classList.remove('visible');
-      reviewIndex = (reviewIndex + 1) % reviewNodes.length;
-      reviewNodes[reviewIndex].classList.add('visible');
+      if(reviewNodes.length > 0) {
+        reviewNodes[reviewIndex].classList.remove('visible');
+        reviewIndex = (reviewIndex + 1) % reviewNodes.length;
+        reviewNodes[reviewIndex].classList.add('visible');
+      }
     }
-    setInterval(cycleReviews, 5000);
+    setInterval(cycleReviews, 4000);
 
-    // Dynamic WhatsApp Link Lead System
     document.getElementById('leadSubmissionForm').addEventListener('submit', function(event) {
       event.preventDefault();
       const clientName = document.getElementById('memberName').value;
@@ -489,4 +438,5 @@
   </script>
 </body>
 </html>
+>
 
